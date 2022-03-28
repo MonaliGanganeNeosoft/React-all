@@ -1,7 +1,8 @@
 const person = {
   talk() {
+    var self = this;
     setTimeout(function () {
-      console.log("this", this);
+      console.log("self", self);
     }, 1000);
   },
 };
