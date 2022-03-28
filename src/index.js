@@ -1,6 +1,12 @@
-//->var ->function
-//->let ->block
-//->const->block
+const person = {
+  name: "Mosh",
+  walk() {},
+  talk() {},
+};
+person.talk();
+person.name = "";
 
-const x = 1;
-x = 2;
+person["name"] = "Moni"; //Or
+const targetMember = "name";
+
+person[targetMember.value] = "Moni";
