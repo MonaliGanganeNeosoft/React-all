@@ -1,5 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-const element = <h1>Hello world</h1>;
-ReactDOM.render(element, document.getElementById("root"));
+function sayHello() {
+  for (var i = 0; i < 5; i++) {
+    console.log(i);
+  }
+}
+sayHello();
