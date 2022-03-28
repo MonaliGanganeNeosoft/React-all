@@ -1,3 +1,11 @@
-const colors = ["red", "green", "blue"];
-const items = colors.map((color) => `<li>${color}</li>`);
-console.log(items);
+const address = {
+  street: "",
+  city: "",
+  country: "",
+};
+const street = address.street;
+const city = address.city;
+const country = address.country;
+
+//object destructure method
+const { street: st, city: ci, country: co } = address;
