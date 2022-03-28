@@ -7,5 +7,14 @@ class Person {
     console.log("walk");
   }
 }
-const person = new Person("Moni", "goli");
-console.log(person);
+class Teacher extends Person {
+  constructor(fname, lname, degree) {
+    super(fname, lname);
+    this.degree = degree;
+  }
+  teach() {
+    console.log("Teach method");
+  }
+}
+const teacher = new Teacher("Moni", "goli", "BE");
+console.log(teacher);
