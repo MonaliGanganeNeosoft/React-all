@@ -1,5 +1,11 @@
-const first = { name: "Moni" };
-const second = { job: "fr" };
-
-const combined = { ...first, ...second, location: "Pune" };
-console.log(combined);
+class Person {
+  constructor(fname, lname) {
+    this.fname = fname;
+    this.lname = lname;
+  }
+  walk() {
+    console.log("walk");
+  }
+}
+const person = new Person("Moni", "goli");
+console.log(person);
