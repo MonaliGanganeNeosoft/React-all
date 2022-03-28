@@ -1,10 +1,7 @@
-const person = {
-  name: "Mosh",
-  walk() {
-    console.log(this);
-  },
+const square = function (number) {
+  return number * number;
 };
-person.walk();
+console.log(square(5));
 
-const walk = person.walk.bind(person);
-walk();
+const square1 = (number) => number * number;
+console.log(square1(5));
