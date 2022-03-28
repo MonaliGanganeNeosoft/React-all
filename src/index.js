@@ -1,7 +1,6 @@
-function sayHello() {
-  for (let i = 0; i < 5; i++) {
-    console.log(i);
-  }
-  console.log(i); //not access let
-}
-sayHello();
+//->var ->function
+//->let ->block
+//->const->block
+
+const x = 1;
+x = 2;
