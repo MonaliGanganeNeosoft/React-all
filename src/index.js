@@ -1,12 +1,7 @@
 const person = {
   name: "Mosh",
-  walk() {},
-  talk() {},
+  walk() {
+    console.log(this);
+  },
 };
-person.talk();
-person.name = "";
-
-person["name"] = "Moni"; //Or
-const targetMember = "name";
-
-person[targetMember.value] = "Moni";
+person.walk();
