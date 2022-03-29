@@ -7,6 +7,9 @@ class Counter extends Component {
       //Ajax call and get new data from the server
     }
   }
+  componentWillUnmount() {
+    console.log("Counter - unmount");
+  }
   render() {
     console.log("Counter - Rendered");
     return (
