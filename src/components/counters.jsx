@@ -10,7 +10,11 @@ class Counters extends Component {
     ],
   };
   handleIncrement = (counter) => {
-    console.log(counter);
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value++;
+    this.setState({ counters });
   };
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
