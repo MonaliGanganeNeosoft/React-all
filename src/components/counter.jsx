@@ -5,13 +5,12 @@ class Counter extends Component {
   };
 
   handleIncrement = () => {
-    this.props.value = 0; //counter.jsx:8 Uncaught TypeError: Cannot assign to read only property 'value' of object '#<Object>'
     this.setState({ value: this.state.value + 1 });
   };
 
   render() {
     return (
-      <>
+      <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.handleIncrement()}
@@ -19,7 +18,13 @@ class Counter extends Component {
         >
           Increment
         </button>
-      </>
+        <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
+      </div>
     );
   }
   getBadgeClasses() {
