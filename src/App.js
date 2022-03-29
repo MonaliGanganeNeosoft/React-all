@@ -10,6 +10,11 @@ export class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+  constructor(props) {
+    super(props);
+    console.log("App - Constructor", this.props);
+    // this.state = this.props.something;
+  }
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
