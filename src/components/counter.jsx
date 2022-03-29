@@ -4,12 +4,12 @@ class Counter extends Component {
     count: 0,
   };
 
-  handleIncrement = (product) => {
-    console.log(product);
+  handleIncrement = () => {
     this.setState({ count: this.state.count + 1 });
   };
 
   render() {
+    console.log("props", this.props);
     return (
       <>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
