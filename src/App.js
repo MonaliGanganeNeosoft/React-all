@@ -1,8 +1,7 @@
-import "./App.css";
-import NavBar from "./components/navbar";
+import React, { Component } from "react";
+import Navbar from "./components/navbar";
 import Counters from "./components/counters";
-
-class App extends Component() {
+export class App extends Component {
   state = {
     counters: [
       { id: 1, value: 4 },
@@ -29,11 +28,10 @@ class App extends Component() {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
   };
-
   render() {
     return (
       <>
-        <NavBar />
+        <Navbar />
         <main className="container">
           <Counters
             counters={this.state.counters}
