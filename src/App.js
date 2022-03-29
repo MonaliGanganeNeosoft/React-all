@@ -12,8 +12,10 @@ export class App extends Component {
   };
   constructor(props) {
     super(props);
-    console.log("App - Constructor", this.props);
-    // this.state = this.props.something;
+    console.log("App - Constructor");
+  }
+  componentDidMount() {
+    console.log("App - mounted");
   }
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
@@ -34,6 +36,7 @@ export class App extends Component {
     this.setState({ counters });
   };
   render() {
+    console.log("App - renderd");
     return (
       <>
         <Navbar
