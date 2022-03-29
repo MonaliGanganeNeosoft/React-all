@@ -1,10 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
+import NavBar from "./components/navbar";
+import Counters from "./components/counters";
 
 function App() {
   return (
     <>
-      <h1>hii</h1>
+      <NavBar />
+      <main className="container">
+        <Counters />
+      </main>
     </>
   );
 }
