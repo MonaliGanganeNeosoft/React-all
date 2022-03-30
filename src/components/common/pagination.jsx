@@ -1,11 +1,19 @@
 import React from "react";
+import _ from "lodash"; //for underscore
 const Pagination = (props) => {
+  const { itemsCount, pageSize } = props;
+  const pagesCount = itemsCount / pageSize;
+  //[1,2,3].map()
+  //[1 ... pagesCount].map()
+  const pages = _.range(1, pagesCount + 1);
   return (
     <nav>
       <ul className="pagination">
-        <li className="page-item">
-          <a className="page-link">1</a>
-        </li>
+        {pages.map((page) => (
+          <li key={page} className="page-item">
+            <a className="page-link">{page}</a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
