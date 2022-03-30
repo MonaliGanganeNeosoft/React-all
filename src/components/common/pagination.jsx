@@ -2,9 +2,11 @@ import React from "react";
 import _ from "lodash"; //for underscore
 const Pagination = (props) => {
   const { itemsCount, pageSize } = props;
-  const pagesCount = itemsCount / pageSize;
+  const pagesCount = Math.ceil(itemsCount / pageSize);
   //[1,2,3].map()
   //[1 ... pagesCount].map()
+  console.log(pagesCount);
+  if (pagesCount === 1) return null;
   const pages = _.range(1, pagesCount + 1);
   return (
     <nav>
