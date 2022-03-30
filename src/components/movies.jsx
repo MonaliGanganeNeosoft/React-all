@@ -13,7 +13,7 @@ class Movies extends Component {
     pageSize: 4,
   };
   componentDidMount() {
-    this.setState({ movies: getMovies(), genres: getGenres });
+    this.setState({ movies: getMovies(), genres: getGenres() });
   }
   handleDelete = (movie) => {
     const movies = this.state.movies.filter((m) => m._id !== movie._id);
@@ -41,7 +41,7 @@ class Movies extends Component {
     const movies = paginate(allMovies, currentPage, pageSize);
     return (
       <div className="row">
-        <div className="col-2">
+        <div className="col-3">
           <ListGroup
             items={this.state.genres}
             onItemSelect={this.handleGenreSelect}
