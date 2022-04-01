@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Like from "../components/common/like";
 import Table from "./common/table";
-const x = <Like></Like>; //React element{}
+
 class MoviesTable extends Component {
   columns = [
     { path: "title", label: "Title" },
