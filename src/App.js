@@ -19,7 +19,7 @@ class App extends Component {
           <Switch>
             <Route
               path="/products"
-              render={() => <Products sortBy="newest" />}
+              render={(props) => <Products sortBy="newest" {...props} />}
             />
             <Route path="/posts" component={Posts} />
             <Route path="/admin" component={Dashboard} />
