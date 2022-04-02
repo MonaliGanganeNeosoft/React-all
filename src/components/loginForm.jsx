@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
-  state = { account: { username: "", password: "" } };
+  state = {
+    account: { password: "" },
+  };
   handleSubmit = (e) => {
     e.preventDefault();
 
