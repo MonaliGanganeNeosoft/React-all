@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class LoginForm extends Component {
   state = {
-    account: { username: null, password: "" },
+    account: { username: "", password: "" },
   };
   handleSubmit = (e) => {
     e.preventDefault();
