@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 
+axios.interceptors.response.use(null, (error) => {
+  const expectedError =
+    error.response &&
+    error.response.status >= 400 &&
+    error.response.status < 500;
+
+  if (!expectedError) {
+    console.log("logging the error", error);
+    alert("an unexpected error occured ");
+  }
+
+  return Promise.reject(error);
+});
+
 const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 class App extends Component {
@@ -40,19 +54,11 @@ class App extends Component {
     const posts = this.state.posts.filter((p) => p.id !== post.id);
     this.setState({ posts });
     try {
-      await axios.delete(apiEndpoint + "/" + post.id);
+      await axios.delete(apiEndpoint + "m/999a" + post.id);
     } catch (ex) {
-      //expected(404:not found,400:bad request)-c;ient errors
-      //->display a specific error message
       if (ex.response && ex.response.status === 404) {
         alert("This post has alreay been deleted");
-      } else {
-        console.log("logging the error", ex);
-        alert("Somthing failed while deleting a Post ");
       }
-      //unexpedted(network error,server down,db down,bug)
-      //-log term
-      //-display a generic and fiendly error msg
       this.setState({ posts: originalPosts });
     }
   };
