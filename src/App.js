@@ -7,10 +7,11 @@ class App extends Component {
     posts: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     //pending >resolved(success) or rejected(failure)
     const promise = axios.get("https://jsonplaceholder.typicode.com/posts");
-    console.log(promise);
+    const response = await promise;
+    console.log(response);
   }
 
   handleAdd = () => {
