@@ -9,8 +9,9 @@ class App extends Component {
 
   async componentDidMount() {
     //pending >resolved(success) or rejected(failure)
-    const promise = axios.get("https://jsonplaceholder.typicode.com/posts");
-    const response = await promise;
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
     console.log(response);
   }
 
