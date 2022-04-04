@@ -1,20 +1,27 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./App.css";
 
 class App extends Component {
   state = {
-    posts: []
+    posts: [],
   };
+
+  componentDidMount() {
+    //pending >resolved(success) or rejected(failure)
+    const promise = axios.get("https://jsonplaceholder.typicode.com/posts");
+    console.log(promise);
+  }
 
   handleAdd = () => {
     console.log("Add");
   };
 
-  handleUpdate = post => {
+  handleUpdate = (post) => {
     console.log("Update", post);
   };
 
-  handleDelete = post => {
+  handleDelete = (post) => {
     console.log("Delete", post);
   };
 
@@ -33,7 +40,7 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.posts.map(post => (
+            {this.state.posts.map((post) => (
               <tr key={post.id}>
                 <td>{post.title}</td>
                 <td>
